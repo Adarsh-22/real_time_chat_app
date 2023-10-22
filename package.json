@@ -1,0 +1,17 @@
+{
+	"name": "live_chat_app",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js.js",
+	"type": "module",
+	"scripts": {
+		"start": "nodemon backend/server"
+	},
+	"author": "Adarsh H",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.3.1",
+		"express.js": "^1.0.0",
+		"nodemon": "^3.0.1"
+	}
+}

@@ -16,7 +16,7 @@ const Homepage = () => {
 				borderRadius="lg"
 				borderWidth="1px">
 				<Text textAlign="center" fontFamily="Work sans" fontSize="3xl" fontWeight="bold">
-					Talk A Tive
+					Chat Sphere
 				</Text>
 			</Box>
 			<Box borderRadius="lg" borderWidth="1px" bg="white" width="100%" p={4}>

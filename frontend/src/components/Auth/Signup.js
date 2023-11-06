@@ -123,11 +123,11 @@ const Signup = () => {
 				<FormLabel>Name</FormLabel>
 				<Input placeholder="Enter your name" onChange={(e) => setName(e.target.value)} />
 			</FormControl>
-			<FormControl id="email" isRequired>
+			<FormControl id="signUpEmail" isRequired>
 				<FormLabel>Email</FormLabel>
 				<Input placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} />
 			</FormControl>
-			<FormControl id="password" isRequired>
+			<FormControl id="signUpPassword" isRequired>
 				<FormLabel>Password</FormLabel>
 				<InputGroup>
 					<Input

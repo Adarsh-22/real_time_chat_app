@@ -5,7 +5,10 @@ const userModal = mongoose.Schema(
 		name: { type: String, required: true },
 		email: { type: String, required: true, unique: true },
 		password: { type: String, required: true },
-		pic: { type: String, default: "https://icon-library.com/icon/default-user-icon-3.html.html" },
+		pic: {
+			type: String,
+			default: "http://res.cloudinary.com/adarsh002/image/upload/v1699098029/axtembkqoahwxumepy5x.png",
+		},
 	},
 	{
 		timestamps: true,

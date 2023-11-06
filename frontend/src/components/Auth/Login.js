@@ -101,7 +101,7 @@ const Login = () => {
 				mt={15}
 				onClick={() => {
 					setEmail("guest@example.com");
-					setPassword("1223456");
+					setPassword("123456");
 				}}>
 				Get Guest User Credentials
 			</Button>

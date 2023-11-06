@@ -68,4 +68,19 @@ const loginUser = asyncHandler(async (req, res) => {
 	}
 });
 
-export default { registerUser, loginUser };
+const filterUsers = asyncHandler(async (req, res) => {
+	const keyword = req.query.search
+		? {
+				$or: [
+					//(user can search by name or email)
+					{ name: { $regex: req.query.search, $options: "i" } }, // checks if name includes search val
+					{ email: { $regex: req.query.search, $options: "i" } }, // checks if email includes search val
+				],
+		  }
+		: {};
+
+	const users = await User.find(keyword).find({ _id: { $ne: req.user._id } }); // .find removes current user if present in the list
+	res.send(users);
+});
+
+export default { registerUser, loginUser, filterUsers };

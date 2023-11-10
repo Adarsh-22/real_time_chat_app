@@ -5,16 +5,18 @@ import { useEffect, useState } from "react";
 import { AddIcon } from "@chakra-ui/icons";
 import ChatLoading from "./Navbar/ChatLoading";
 import { getSender } from "../../config/chatLogic";
+import CreateGroupChatModal from "./CreateGroupChatModal";
 
-const AllChats = () => {
+const AllChats = ({ fetchAgain }) => {
 	const [loggedUser, setLoggedUser] = useState();
 
 	const { selectedChat, setSelectedChat, user, chats, setChats } = GlobalState();
 	const toast = useToast();
+
 	useEffect(() => {
 		setLoggedUser(JSON.parse(localStorage.getItem("userInfo")));
 		fetchChats();
-	}, []);
+	}, [fetchAgain]);
 
 	const fetchChats = async () => {
 		try {
@@ -53,9 +55,11 @@ const AllChats = () => {
 				justifyContent="space-between"
 				alignItems="center">
 				<Text fontSize="2xl">MY Chats</Text>
-				<Button display="flex" fontSize={{ base: "14px", md: "10px", lg: "17px" }} rightIcon={<AddIcon />}>
-					Create Group Chat
-				</Button>
+				<CreateGroupChatModal>
+					<Button display="flex" fontSize={{ base: "14px", md: "10px", lg: "17px" }} rightIcon={<AddIcon />}>
+						Create Group Chat
+					</Button>
+				</CreateGroupChatModal>
 			</Box>
 			{chats.length > 0 ? (
 				<Stack overflowY="scroll" width="100%">

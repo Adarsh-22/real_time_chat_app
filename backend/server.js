@@ -6,6 +6,7 @@ import colors from "colors";
 import userRouter from "./routes/userRoutes.js";
 import { errHandler, notFound } from "./middleware/errorMiddleware.js";
 import chatRouter from "./routes/chatRoutes.js";
+import messageRouter from "./routes/messageRoutes.js";
 
 dotenv.config(); // cofigure env
 connectDB();
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/user", userRouter);
 app.use("/api/chat", chatRouter);
+app.use("/api/message", messageRouter);
 
 // err handlers
 app.use(notFound);

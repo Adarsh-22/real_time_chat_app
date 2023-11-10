@@ -1,7 +1,7 @@
 import { GlobalState } from "../Context/GlobalContext";
 import { Box } from "@chakra-ui/react";
 import AllChats from "../components/ChatPage/AllChats";
-import ChatBox from "../components/ChatPage/ChatBox";
+import ChatBox from "../components/ChatPage/Chatbox/ChatBox";
 import Navbar from "../components/ChatPage/Navbar/Navbar";
 import { useState } from "react";
 
@@ -13,7 +13,7 @@ const ChatPage = () => {
 		<div style={{ width: "100%" }}>
 			{user && <Navbar />}
 
-			<Box d="flex" justifyContent="space-between" width="100%" p="15px" h="90vh">
+			<Box display="flex" justifyContent="space-between" width="100%" p="15px" h="90vh">
 				{user && <AllChats fetchAgain={fetchAgain} />}
 				{user && <ChatBox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />}
 			</Box>
